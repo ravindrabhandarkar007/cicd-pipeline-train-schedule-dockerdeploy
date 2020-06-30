@@ -4,7 +4,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                sh './gradle build'
+                sh 'cd /opt/gradle/gradle-5.0/bin'
+                sh 'gradle build'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
